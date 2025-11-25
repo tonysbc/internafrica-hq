@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Stethoscope, Scale, Heart, ArrowRight, CheckCircle } from 'lucide-react';
-// We import data relative to the 'app' folder
+import { MapPin, Stethoscope, Scale, Heart, ArrowRight, CheckCircle, Plane } from 'lucide-react';
 import { programs } from '../data/programs'; 
 
 export default function Home() {
@@ -8,10 +7,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       {/* --- HERO SECTION --- */}
       <section className="relative h-[90vh] flex items-center justify-center bg-brand-primary overflow-hidden">
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/40 z-10" />
-        
-        {/* Background Image - Ensure 'hero-kilimanjaro.jpg' is in public/images/ */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
           style={{ backgroundImage: "url('/images/hero-kilimanjaro.jpg')" }} 
@@ -68,7 +64,6 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-           {/* Dynamically render cards from your data file */}
            {programs.map((program) => (
              <ProgramCard 
                key={program.id}
@@ -94,10 +89,10 @@ export default function Home() {
             </div>
           </div>
           <div className="h-96 bg-gray-800 rounded-2xl overflow-hidden border-4 border-brand-accent/30 relative">
-             <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-700">
-               {/* Replace with actual image later */}
-               [Image: Intern Team or House]
-             </div>
+             <div 
+               className="absolute inset-0 bg-cover bg-center"
+               style={{ backgroundImage: "url('/images/team-logistics.jpg')" }} // Ensure you upload this image!
+             />
           </div>
         </div>
       </section>
@@ -105,16 +100,14 @@ export default function Home() {
   );
 }
 
-// --- SUB-COMPONENTS ---
-
 function ProgramCard({ icon, title, desc, location, link }: any) {
   return (
     <Link href={link} className="group p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all bg-white flex flex-col">
       <div className="mb-6 p-4 bg-brand-primary/5 rounded-xl w-fit group-hover:bg-brand-primary group-hover:text-white transition-colors">
         {icon}
       </div>
-      <h3 className="text-2xl font-bold text-brand-primary mb-3">{title}</h3>
-      <p className="text-gray-600 mb-6 flex-grow">{desc}</p>
+      <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2">{title}</h3>
+      <p className="text-gray-600 mb-6 flex-grow text-sm">{desc}</p>
       <div className="flex items-center text-sm font-semibold text-brand-accent mt-auto">
         <MapPin size={16} className="mr-1" /> {location}
       </div>
@@ -138,5 +131,6 @@ function CategoryIcon({ category }: { category: string }) {
   if (category === 'Medical') return <Stethoscope size={40} className="text-brand-accent" />;
   if (category === 'Legal') return <Scale size={40} className="text-brand-accent" />;
   if (category === 'Social Work') return <Heart size={40} className="text-brand-accent" />;
+  if (category === 'Volunteering') return <Plane size={40} className="text-brand-accent" />;
   return <CheckCircle size={40} className="text-brand-accent" />;
 }

@@ -25,22 +25,18 @@ export default function RootLayout({
             <div className="flex justify-between items-center h-20">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                  IA
-                </div>
-                <span className="font-heading font-bold text-xl tracking-tight text-brand-primary">
-                  Intern Africa HQ
-                </span>
+                <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto" />
               </Link>
 
               {/* Desktop Nav - UPDATED with all links */}
               <nav className="hidden lg:flex gap-6 items-center font-medium text-gray-600 text-sm">
                 <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
                 <Link href="/about" className="hover:text-brand-primary transition-colors">About</Link>
+                <Link href="/team" className="hover:text-brand-primary transition-colors">Team</Link>
+                <Link href="/faq" className="hover:text-brand-primary transition-colors">FAQ</Link>
                 <Link href="/programs/medical-nursing-internship" className="hover:text-brand-primary transition-colors">Medical</Link>
                 <Link href="/programs/legal-human-rights" className="hover:text-brand-primary transition-colors">Legal</Link>
                 <Link href="/programs/social-work-community" className="hover:text-brand-primary transition-colors">Social Work</Link>
-                <Link href="/programs/volunteering-zanzibar" className="hover:text-brand-primary transition-colors">Zanzibar</Link>
                 <Link 
                   href="/apply" 
                   className="px-5 py-2 bg-brand-primary text-white rounded-full hover:bg-brand-primary/90 transition-all font-semibold"
@@ -64,7 +60,7 @@ export default function RootLayout({
         <footer className="bg-brand-primary text-white pt-16 pb-8">
           <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-2xl font-heading font-bold mb-4">Intern Africa HQ</h3>
+              <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto brightness-0 invert mb-4" />
               <p className="text-gray-300 max-w-sm">
                 Connecting global talent with meaningful volunteering and internship opportunities.
               </p>
@@ -75,7 +71,7 @@ export default function RootLayout({
                 <li><Link href="/programs/medical-nursing-internship">Medical & Nursing</Link></li>
                 <li><Link href="/programs/legal-human-rights">Legal & Human Rights</Link></li>
                 <li><Link href="/programs/social-work-community">Social Work</Link></li>
-                <li><Link href="/programs/volunteering-tanzania">Tanzania Guide</Link></li>
+                <li><Link href="/programs/volunteering-tanzania-mainland">Tanzania Guide</Link></li>
                 <li><Link href="/programs/volunteering-zanzibar">Zanzibar Guide</Link></li>
               </ul>
             </div>

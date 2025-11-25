@@ -68,8 +68,6 @@ function ApplyForm() {
                         <option value="">Select one option</option>
                         <option value="Tanzania">Tanzania</option>
                         <option value="Zanzibar">Zanzibar</option>
-                        <option value="South Africa">South Africa</option>
-                        <option value="Kenya">Kenya</option>
                     </select>
                 </div>
 
