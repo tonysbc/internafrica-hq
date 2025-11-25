@@ -1,13 +1,13 @@
-// CORRECT IMPORT PATH FOR ROOT STRUCTURE
-import { programs } from '../../../data/programs'; 
+// CRITICAL FIX: Use '@' to import from root data folder safely
+import { programs } from "@/data/programs"; 
 import Link from "next/link";
 import { CheckCircle, MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
-export default function ProgramPage({ params }: { params: { slug: string } }) {
-  // Vercel needs this to be awaited in newer Next.js versions, 
-  // but for stability with your version we keep it direct.
-  const slug = params.slug;
+export default async function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
+  // Vercel/Next.js 15+ requires params to be awaited
+  const { slug } = await params;
+  
   const program = programs.find((p) => p.slug === slug);
 
   if (!program) {
@@ -38,14 +38,11 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
         
         {/* LEFT COLUMN: Main Content */}
         <div className="lg:col-span-2 space-y-8">
-          
-          {/* Overview */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-brand-primary mb-4">Program Overview</h2>
             <p className="text-gray-600 leading-relaxed text-lg">{program.description}</p>
           </div>
 
-          {/* Highlights */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-brand-primary mb-6">What You Will Do</h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -58,7 +55,6 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
             </div>
           </div>
 
-          {/* Itinerary */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-brand-primary mb-6">Typical Itinerary</h2>
             <div className="space-y-6">
