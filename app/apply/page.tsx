@@ -29,13 +29,12 @@ function ApplyForm() {
             <p className="text-brand-accent font-medium">No payment required today.</p>
             </div>
             
-            {/* IMPORTANT: For a static site on DreamHost, you need a form backend.
-               We use Web3Forms (Free tier) here as an example.
-               Replace 'YOUR_ACCESS_KEY_HERE' with a real key from web3forms.com 
-               or the form will not send emails.
-            */}
+            {/* Form Backend: Web3Forms */}
             <form action="https://api.web3forms.com/submit" method="POST" className="p-8 space-y-6">
+            
+            {/* --- CRITICAL: YOUR ACCESS KEY IS HERE --- */}
             <input type="hidden" name="access_key" value="645d7413-e58a-4913-8a11-d141948c911b" />
+            
             <input type="hidden" name="subject" value="New Intern Africa Application" />
             <input type="hidden" name="redirect" value="https://internafricahq.org/success" />
 
