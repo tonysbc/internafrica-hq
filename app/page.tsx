@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Stethoscope, Scale, Heart, ArrowRight, CheckCircle, Plane } from 'lucide-react';
+import { MapPin, ArrowRight, CheckCircle } from 'lucide-react';
 import { programs } from '../data/programs'; 
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- PROGRAM CATEGORIES --- */}
+      {/* --- PROGRAM CATEGORIES (UPDATED WITH IMAGES) --- */}
       <section id="programs" className="py-24 max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-heading font-bold text-brand-primary mb-4">Choose Your Path</h2>
@@ -65,14 +65,36 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-8">
            {programs.map((program) => (
-             <ProgramCard 
-               key={program.id}
-               icon={<CategoryIcon category={program.category} />}
-               title={program.title}
-               desc={program.description.substring(0, 100) + "..."}
-               location={program.location}
-               link={`/programs/${program.slug}`}
-             />
+             <Link 
+               key={program.id} 
+               href={`/programs/${program.slug}`}
+               className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col"
+             >
+               {/* CARD IMAGE */}
+               <div className="h-56 overflow-hidden relative">
+                 <img 
+                   src={program.image} 
+                   alt={program.title} 
+                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 />
+                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-brand-primary uppercase tracking-wider">
+                   {program.category}
+                 </div>
+               </div>
+
+               {/* CARD CONTENT */}
+               <div className="p-8 flex flex-col flex-grow">
+                 <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2 group-hover:text-brand-accent transition-colors">
+                   {program.title}
+                 </h3>
+                 <p className="text-gray-600 mb-6 flex-grow text-sm line-clamp-3">
+                   {program.description}
+                 </p>
+                 <div className="flex items-center text-sm font-semibold text-brand-accent mt-auto pt-4 border-t border-gray-50">
+                   <MapPin size={16} className="mr-1" /> {program.location}
+                 </div>
+               </div>
+             </Link>
            ))}
         </div>
       </section>
@@ -88,10 +110,10 @@ export default function Home() {
               <FeatureRow title="In-Country Team" desc="Our HQ is in Arusha. We are not a remote agency. We are here with you." />
             </div>
           </div>
-          <div className="h-96 bg-gray-800 rounded-2xl overflow-hidden border-4 border-brand-accent/30 relative">
+          <div className="h-96 bg-gray-800 rounded-2xl overflow-hidden border-4 border-brand-accent/30 relative shadow-2xl">
              <div 
                className="absolute inset-0 bg-cover bg-center"
-               style={{ backgroundImage: "url('/images/team-logistics.jpg')" }} // Ensure you upload this image!
+               style={{ backgroundImage: "url('/images/team-logistics.jpg')" }} 
              />
           </div>
         </div>
@@ -100,37 +122,16 @@ export default function Home() {
   );
 }
 
-function ProgramCard({ icon, title, desc, location, link }: any) {
-  return (
-    <Link href={link} className="group p-8 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all bg-white flex flex-col">
-      <div className="mb-6 p-4 bg-brand-primary/5 rounded-xl w-fit group-hover:bg-brand-primary group-hover:text-white transition-colors">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold text-brand-primary mb-3 line-clamp-2">{title}</h3>
-      <p className="text-gray-600 mb-6 flex-grow text-sm">{desc}</p>
-      <div className="flex items-center text-sm font-semibold text-brand-accent mt-auto">
-        <MapPin size={16} className="mr-1" /> {location}
-      </div>
-    </Link>
-  );
-}
-
 function FeatureRow({ title, desc }: any) {
   return (
     <div className="flex gap-4">
-      <CheckCircle className="text-brand-accent shrink-0" size={24} />
+      <div className="mt-1">
+        <CheckCircle className="text-brand-accent shrink-0" size={24} />
+      </div>
       <div>
         <h4 className="text-xl font-bold mb-1">{title}</h4>
         <p className="text-gray-300 leading-relaxed text-sm opacity-90">{desc}</p>
       </div>
     </div>
   );
-}
-
-function CategoryIcon({ category }: { category: string }) {
-  if (category === 'Medical') return <Stethoscope size={40} className="text-brand-accent" />;
-  if (category === 'Legal') return <Scale size={40} className="text-brand-accent" />;
-  if (category === 'Social Work') return <Heart size={40} className="text-brand-accent" />;
-  if (category === 'Volunteering') return <Plane size={40} className="text-brand-accent" />;
-  return <CheckCircle size={40} className="text-brand-accent" />;
 }

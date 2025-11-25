@@ -28,15 +28,16 @@ export default function RootLayout({
                 <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto" />
               </Link>
 
-              {/* Desktop Nav - UPDATED with all links */}
+              {/* Desktop Nav - UPDATED with ALL programs */}
               <nav className="hidden lg:flex gap-6 items-center font-medium text-gray-600 text-sm">
                 <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
                 <Link href="/about" className="hover:text-brand-primary transition-colors">About</Link>
                 <Link href="/team" className="hover:text-brand-primary transition-colors">Team</Link>
-                <Link href="/faq" className="hover:text-brand-primary transition-colors">FAQ</Link>
                 <Link href="/programs/medical-nursing-internship" className="hover:text-brand-primary transition-colors">Medical</Link>
                 <Link href="/programs/legal-human-rights" className="hover:text-brand-primary transition-colors">Legal</Link>
-                <Link href="/programs/social-work-community" className="hover:text-brand-primary transition-colors">Social Work</Link>
+                <Link href="/programs/social-work-community" className="hover:text-brand-primary transition-colors">Social</Link>
+                <Link href="/programs/volunteering-tanzania-mainland" className="hover:text-brand-primary transition-colors">Tanzania</Link>
+                <Link href="/programs/volunteering-zanzibar" className="hover:text-brand-primary transition-colors">Zanzibar</Link>
                 <Link 
                   href="/apply" 
                   className="px-5 py-2 bg-brand-primary text-white rounded-full hover:bg-brand-primary/90 transition-all font-semibold"
