@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { submitApplication } from "../actions";
 
 export default function ApplyPage() {
   return (
@@ -29,11 +30,9 @@ function ApplyForm() {
             <p className="text-brand-accent font-medium">Tell us more about your trip details.</p>
             </div>
             
-            <form action="https://api.web3forms.com/submit" method="POST" className="p-8 space-y-6">
-            <input type="hidden" name="access_key" value="645d7413-e58a-4913-8a11-d141948c911b" />
-            <input type="hidden" name="subject" value="New Intern Africa Application" />
-            <input type="hidden" name="redirect" value="https://internafricahq.org/success" />
-
+            {/* Form uses the Server Action from app/actions.ts */}
+            <form action={submitApplication} className="p-8 space-y-6">
+            
             {/* 1. Contact Details */}
             <div className="space-y-4">
                 <h3 className="text-xl font-bold text-gray-800 border-b pb-2">1. Personal Details</h3>

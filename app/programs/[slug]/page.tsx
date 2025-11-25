@@ -3,14 +3,9 @@ import Link from "next/link";
 import { CheckCircle, MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
-// Note: We REMOVED 'generateStaticParams' to force Dynamic Rendering.
-// This ensures Vercel finds the data at runtime, fixing the 404 errors.
-
 export default function ProgramPage({ params }: { params: { slug: string } }) {
-  // 1. Find the specific program matching the URL slug
   const program = programs.find((p) => p.slug === params.slug);
 
-  // 2. If no program matches, show the 404 page
   if (!program) {
     return notFound();
   }
@@ -27,7 +22,7 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
           <span className="block w-fit py-1 px-3 rounded-full bg-brand-accent/20 border border-brand-accent text-brand-accent font-semibold text-xs mb-4 uppercase tracking-wider">
             {program.category}
           </span>
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">{program.title}</h1>
+          <h1 className="text-3xl md:text-5xl font-heading font-bold mb-6">{program.title}</h1>
           <div className="flex flex-wrap gap-6 text-lg font-medium text-gray-200">
             <div className="flex items-center gap-2"><MapPin size={20} /> {program.location}</div>
             <div className="flex items-center gap-2"><DollarSign size={20} /> {program.price}</div>
@@ -37,9 +32,7 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
 
       <div className="max-w-7xl mx-auto px-4 mt-8 grid lg:grid-cols-3 gap-10">
         
-        {/* LEFT COLUMN: Main Content */}
         <div className="lg:col-span-2 space-y-8">
-          
           {/* Overview */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-brand-primary mb-4">Program Overview</h2>
@@ -73,7 +66,7 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Sticky "Apply" Card */}
+        {/* Sticky "Apply" Card */}
         <div className="lg:col-span-1">
           <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 sticky top-24">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Interested?</h3>
@@ -96,7 +89,7 @@ export default function ProgramPage({ params }: { params: { slug: string } }) {
               href={`/apply?program=${program.slug}`}
               className="block w-full py-4 bg-brand-primary text-white text-center font-bold rounded-xl hover:bg-brand-primary/90 transition-all mb-4"
             >
-              Start Application
+              Apply Now
             </Link>
           </div>
         </div>
