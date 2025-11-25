@@ -14,10 +14,12 @@ export default function TeamPage() {
         <div className="grid md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-4">
             <div className="aspect-[3/4] bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 shadow-sm">
-               {/* Placeholder for Saida's Image */}
-               <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-50">
-                 [Image: Saida Kessy]
-               </div>
+               {/* Updated Image for Saida */}
+               <img 
+                 src="/images/Saida.jpeg" 
+                 alt="Saida Kessy" 
+                 className="w-full h-full object-cover"
+               />
             </div>
             <div className="flex gap-4 justify-center">
               <a href="#" className="p-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100"><Twitter size={20} /></a>
@@ -46,10 +48,12 @@ export default function TeamPage() {
         <div className="grid md:grid-cols-12 gap-8 items-start pt-16 border-t border-gray-100">
           <div className="md:col-span-4">
             <div className="aspect-[3/4] bg-gray-100 rounded-xl overflow-hidden mb-4 border border-gray-200 shadow-sm">
-               {/* Placeholder for Dr. Happy's Image */}
-               <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-50">
-                 [Image: Dr. Happy]
-               </div>
+               {/* Updated Image for Dr. Happy */}
+               <img 
+                 src="/images/Happy.jpeg" 
+                 alt="Dr. Happy Herbert Mlacha" 
+                 className="w-full h-full object-cover"
+               />
             </div>
             <div className="flex gap-4 justify-center">
               <a href="#" className="p-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100"><Twitter size={20} /></a>
