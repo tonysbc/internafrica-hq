@@ -1,19 +1,16 @@
-import { programs } from '../../../data/programs'; // Adjust path for deeper nesting
+import { programs } from '../../../data/programs';
 import Link from "next/link";
 import { CheckCircle, MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
-// 1. GENERATE STATIC PARAMS (REQUIRED for DreamHost/Static Export)
-export async function generateStaticParams() {
-  return programs.map((program) => ({
-    slug: program.slug,
-  }));
-}
+// Note: We REMOVED 'generateStaticParams' to force Dynamic Rendering.
+// This ensures Vercel finds the data at runtime, fixing the 404 errors.
 
-// 2. THE PAGE COMPONENT
 export default function ProgramPage({ params }: { params: { slug: string } }) {
+  // 1. Find the specific program matching the URL slug
   const program = programs.find((p) => p.slug === params.slug);
 
+  // 2. If no program matches, show the 404 page
   if (!program) {
     return notFound();
   }
