@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MapPin, ArrowRight, CheckCircle } from 'lucide-react';
+// CORRECT IMPORT PATH FOR ROOT STRUCTURE
 import { programs } from '../data/programs'; 
 
 export default function Home() {

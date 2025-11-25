@@ -19,7 +19,7 @@ export const programs: Program[] = [
     category: "Legal",
     location: "Arusha",
     price: "$280 / week",
-    image: "/images/legal-group.jpeg", // Updated to .jpeg
+    image: "/images/legal-group.jpeg", 
     description: "Work alongside specialized NGOs and law firms focusing on women's rights, land disputes, and family law.",
     highlights: ["Legal Research and Writing", "Court Observations", "Legal Aid Outreach", "Human Rights Advocacy"],
     itinerary: [
