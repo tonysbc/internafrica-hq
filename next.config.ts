@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // CRITICAL for DreamHost: Generates standard HTML/CSS files
-  output: 'export', 
-  
-  // CRITICAL for DreamHost: Disables server-side image optimization
-  images: {
-    unoptimized: true, 
-  },
+  /* * Vercel Optimization:
+   * We REMOVED 'output: export' and 'unoptimized: true'.
+   * Vercel will now automatically handle image optimization and routing.
+   */
 };
 
 export default nextConfig;
