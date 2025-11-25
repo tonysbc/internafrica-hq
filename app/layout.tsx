@@ -3,6 +3,8 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { Menu, Facebook, Instagram, Twitter } from "lucide-react";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from "@vercel/analytics/next"; // 1. Import Vercel Analytics
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -28,7 +30,7 @@ export default function RootLayout({
                 <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto" />
               </Link>
 
-              {/* Desktop Nav - UPDATED with ALL programs */}
+              {/* Desktop Nav */}
               <nav className="hidden lg:flex gap-6 items-center font-medium text-gray-600 text-sm">
                 <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
                 <Link href="/about" className="hover:text-brand-primary transition-colors">About</Link>
@@ -93,6 +95,10 @@ export default function RootLayout({
             © {new Date().getFullYear()} Intern Africa HQ. All rights reserved.
           </div>
         </footer>
+
+        {/* Analytics Components */}
+        <GoogleAnalytics gaId="G-XYZ123456" />
+        <Analytics /> {/* 2. Add Vercel Analytics Component */}
       </body>
     </html>
   );
