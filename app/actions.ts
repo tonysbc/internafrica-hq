@@ -22,7 +22,8 @@ export async function submitApplication(formData: FormData) {
   try {
     await resend.emails.send({
       from: "Intern Africa App <onboarding@resend.dev>",
-      to: "tonyseverines@gmail.com", // Admin email
+      // UPDATED: Send to both emails
+      to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
       subject: `New Application: ${rawFormData.name}`,
       react: AdminEmail(rawFormData),
     });

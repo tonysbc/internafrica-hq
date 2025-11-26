@@ -4,7 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import { Menu, Facebook, Instagram, Twitter } from "lucide-react";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from "@vercel/analytics/next"; // 1. Import Vercel Analytics
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -12,6 +12,9 @@ const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat
 export const metadata: Metadata = {
   title: "Intern Africa HQ | Transformative Internships in Tanzania",
   description: "Gain verified medical, legal, and social work experience in Tanzania & Zanzibar.",
+  icons: {
+    icon: '/favicon.ico', // Ensure you have this file in public/
+  },
 };
 
 export default function RootLayout({
@@ -24,10 +27,11 @@ export default function RootLayout({
         {/* --- HEADER --- */}
         <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-20">
+            <div className="flex justify-between items-center h-24"> {/* Increased header height */}
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
-                <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto" />
+                {/* Increased Logo Size to h-16 (approx 64px) */}
+                <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-16 w-auto" />
               </Link>
 
               {/* Desktop Nav */}
@@ -63,7 +67,7 @@ export default function RootLayout({
         <footer className="bg-brand-primary text-white pt-16 pb-8">
           <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-12 w-auto brightness-0 invert mb-4" />
+              <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-16 w-auto brightness-0 invert mb-4" />
               <p className="text-gray-300 max-w-sm">
                 Connecting global talent with meaningful volunteering and internship opportunities.
               </p>
@@ -98,7 +102,7 @@ export default function RootLayout({
 
         {/* Analytics Components */}
         <GoogleAnalytics gaId="G-XYZ123456" />
-        <Analytics /> {/* 2. Add Vercel Analytics Component */}
+        <Analytics />
       </body>
     </html>
   );
