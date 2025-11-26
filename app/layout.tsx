@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, Facebook, Instagram, Twitter } from "lucide-react";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Import SpeedInsights
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title: "Intern Africa HQ | Transformative Internships in Tanzania",
   description: "Gain verified medical, legal, and social work experience in Tanzania & Zanzibar.",
   icons: {
-    icon: '/favicon.ico', // Ensure you have this file in public/
+    icon: '/favicon.ico',
   },
 };
 
@@ -27,10 +28,9 @@ export default function RootLayout({
         {/* --- HEADER --- */}
         <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-24"> {/* Increased header height */}
+            <div className="flex justify-between items-center h-24">
               {/* Logo */}
               <Link href="/" className="flex items-center gap-2">
-                {/* Increased Logo Size to h-16 (approx 64px) */}
                 <img src="/images/Intern-Africa-HQ-Logo.png" alt="Intern Africa HQ" className="h-16 w-auto" />
               </Link>
 
@@ -103,6 +103,7 @@ export default function RootLayout({
         {/* Analytics Components */}
         <GoogleAnalytics gaId="G-XYZ123456" />
         <Analytics />
+        <SpeedInsights /> {/* 2. Add SpeedInsights Component */}
       </body>
     </html>
   );
