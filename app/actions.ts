@@ -21,11 +21,13 @@ export async function submitApplication(formData: FormData) {
 
   try {
     await resend.emails.send({
-      // Validated Sender Domain
-      from: "Intern Africa App <application@send.internafricahq.org>", 
+      // REVERTED TO TESTING MODE: 
+      // Use this default address until your custom domain is verified (Green) in Resend.
+      from: "Intern Africa App <onboarding@resend.dev>", 
       
-      // Admins receiving the notification
-      to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
+      // RESTRICTION: In testing mode, you can ONLY send to your own login email.
+      // Once verified, you can add "info@internafricahq.org" back here.
+      to: ["tonyseverines@gmail.com"], 
       
       // FIX: Use 'headers' to set Reply-To. This bypasses the TypeScript error.
       headers: {
