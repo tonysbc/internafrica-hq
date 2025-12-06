@@ -19,32 +19,29 @@ export async function submitApplication(formData: FormData) {
     program: formData.get("program") as string,
   };
 
-  try {
-    const { data, error } = await resend.emails.send({
-      // PRODUCTION SENDER: Using your verified subdomain
-      from: "Intern Africa App <application@send.internafricahq.org>", 
-      
-      // PRODUCTION RECIPIENTS: Send to both admins
-      to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
-      
-      // REPLY-TO: Allows direct reply to the customer
-      headers: {
-        "Reply-To": rawFormData.email,
-      },
-      
-      subject: `New Application: ${rawFormData.name}`,
-      react: AdminEmail(rawFormData),
-    });
+  // 1. Attempt to send email
+  const { data, error } = await resend.emails.send({
+    // Ensure this matches your verified domain exactly
+    from: "Intern Africa App <application@send.internafricahq.org>", 
+    
+    // Recipients
+    to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
+    
+    headers: {
+      "Reply-To": rawFormData.email,
+    },
+    
+    subject: `New Application: ${rawFormData.name}`,
+    react: AdminEmail(rawFormData),
+  });
 
-    if (error) {
-      console.error("Resend API Error:", error);
-    } else {
-      console.log("Email sent successfully:", data);
-    }
-  } catch (error) {
-    console.error("Failed to send email:", error);
+  // 2. CRITICAL DEBUGGING: 
+  // If there is an error, THROW it so you see it on the screen.
+  if (error) {
+    console.error("Resend API Error:", error);
+    throw new Error(`Email Failed: ${error.message}`);
   }
 
-  // Redirect to success page
+  // 3. Only redirect if successful
   redirect("/success");
 }
