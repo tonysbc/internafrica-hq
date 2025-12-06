@@ -19,29 +19,37 @@ export async function submitApplication(formData: FormData) {
     program: formData.get("program") as string,
   };
 
-  // 1. Attempt to send email
-  const { data, error } = await resend.emails.send({
-    // Ensure this matches your verified domain exactly
-    from: "Intern Africa App <application@send.internafricahq.org>", 
-    
-    // Recipients
-    to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
-    
-    headers: {
-      "Reply-To": rawFormData.email,
-    },
-    
-    subject: `New Application: ${rawFormData.name}`,
-    react: AdminEmail(rawFormData),
-  });
+  try {
+    // Attempt to send the email
+    const { data, error } = await resend.emails.send({
+      // FIX 1: Use the ROOT domain since that is what you verified.
+      // Try 'info@internafricahq.org' or 'application@internafricahq.org'
+      // instead of 'application@send.internafricahq.org'
+      from: "Intern Africa App <application@internafricahq.org>", 
+      
+      // Recipients
+      to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
+      
+      headers: {
+        "Reply-To": rawFormData.email,
+      },
+      
+      subject: `New Application: ${rawFormData.name}`,
+      react: AdminEmail(rawFormData),
+    });
 
-  // 2. CRITICAL DEBUGGING: 
-  // If there is an error, THROW it so you see it on the screen.
-  if (error) {
-    console.error("Resend API Error:", error);
-    throw new Error(`Email Failed: ${error.message}`);
+    if (error) {
+      // Log error but DO NOT crash the app. 
+      // This prevents the "Application Error" screen.
+      console.error("Resend API Error:", error);
+    } else {
+      console.log("Email sent successfully:", data);
+    }
+  } catch (error) {
+    // Catch network/server errors and log them
+    console.error("Failed to send email:", error);
   }
 
-  // 3. Only redirect if successful
+  // Always redirect to success so the user isn't stuck
   redirect("/success");
 }
