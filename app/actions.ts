@@ -20,16 +20,14 @@ export async function submitApplication(formData: FormData) {
   };
 
   try {
-    await resend.emails.send({
-      // REVERTED TO TESTING MODE: 
-      // Use this default address until your custom domain is verified (Green) in Resend.
-      from: "Intern Africa App <onboarding@resend.dev>", 
+    const { data, error } = await resend.emails.send({
+      // PRODUCTION SENDER: Using your verified subdomain
+      from: "Intern Africa App <application@send.internafricahq.org>", 
       
-      // RESTRICTION: In testing mode, you can ONLY send to your own login email.
-      // Once verified, you can add "info@internafricahq.org" back here.
-      to: ["tonyseverines@gmail.com"], 
+      // PRODUCTION RECIPIENTS: Send to both admins
+      to: ["tonyseverines@gmail.com", "info@internafricahq.org"], 
       
-      // FIX: Use 'headers' to set Reply-To. This bypasses the TypeScript error.
+      // REPLY-TO: Allows direct reply to the customer
       headers: {
         "Reply-To": rawFormData.email,
       },
@@ -37,9 +35,16 @@ export async function submitApplication(formData: FormData) {
       subject: `New Application: ${rawFormData.name}`,
       react: AdminEmail(rawFormData),
     });
+
+    if (error) {
+      console.error("Resend API Error:", error);
+    } else {
+      console.log("Email sent successfully:", data);
+    }
   } catch (error) {
     console.error("Failed to send email:", error);
   }
 
+  // Redirect to success page
   redirect("/success");
 }
