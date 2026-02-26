@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Intern Africa HQ
 
-## Getting Started
+**Internships that Change Lives.**
 
-First, run the development server:
+Intern Africa HQ is a premium, verified platform for medical, legal, and social work internships in Tanzania and Zanzibar. It connects global talent with safe, structured, and high-impact placements focusing on professional career development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Quick Start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-repo/internafrica-hq.git
+    cd internafrica-hq
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+4.  **Open [http://localhost:3000](http://localhost:3000)** in your browser to see the result.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** [Next.js](https://nextjs.org/) (App Router, TypeScript)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Email:** [Resend](https://resend.com/) & [React Email](https://react.email/)
+- **Analytics:** [Vercel Analytics](https://vercel.com/analytics) & [Speed Insights](https://vercel.com/speed-insights)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+- `app/`: Next.js App Router pages and layouts.
+- `components/`: Reusable React components.
+- `data/`: Static data for programs and other content.
+- `public/`: Static assets (images, logos, icons).
+- `docs/`: Project documentation and roadmap.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The central roadmap for Intern Africa HQ is located at `docs/0-to-1-roadmap-bible.md`. It tracks the current status and future development goals.
+
+## 🤝 Contributing
+
+This project is currently being developed for **Intern Africa HQ**. For inquiries, please contact [info@internafricahq.org](mailto:info@internafricahq.org).

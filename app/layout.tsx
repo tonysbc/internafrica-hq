@@ -6,6 +6,7 @@ import { Menu, Facebook, Instagram, Twitter } from "lucide-react";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next"; // 1. Import SpeedInsights
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -101,6 +102,7 @@ export default function RootLayout({
         </footer>
 
         {/* Analytics Components */}
+        <WhatsAppButton />
         <GoogleAnalytics gaId="G-XYZ123456" />
         <Analytics />
         <SpeedInsights /> {/* 2. Add SpeedInsights Component */}

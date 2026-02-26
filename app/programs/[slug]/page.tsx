@@ -1,8 +1,29 @@
-// CRITICAL FIX: Use '@' to import from root data folder safely
 import { programs } from "@/data/programs"; 
 import Link from "next/link";
 import { CheckCircle, MapPin, DollarSign, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const program = programs.find((p) => p.slug === slug);
+
+  if (!program) {
+    return {
+      title: "Program Not Found | Intern Africa HQ",
+    };
+  }
+
+  return {
+    title: `${program.title} | Intern Africa HQ`,
+    description: program.description.substring(0, 160),
+    openGraph: {
+      title: `${program.title} | Intern Africa HQ`,
+      description: program.description.substring(0, 160),
+      images: [program.image],
+    },
+  };
+}
 
 export default async function ProgramPage({ params }: { params: Promise<{ slug: string }> }) {
   // Vercel/Next.js 15+ requires params to be awaited
