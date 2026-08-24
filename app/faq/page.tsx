@@ -25,8 +25,8 @@ export default function FAQPage() {
         />
 
         <FAQItem
-          question="Who pays for the program — me or Intern Africa?"
-          answer="You pay your program fee directly, before travelling. Intern Africa does not cover or reimburse program costs — the fee funds your placement, accommodation, meals, and in-country support for the duration of your program."
+          question="Who pays for the program, me or Intern Africa?"
+          answer="You pay your program fee directly, before travelling. Intern Africa does not cover or reimburse program costs. The fee funds your placement, accommodation, meals, and in-country support for the duration of your program."
         />
 
         <FAQItem

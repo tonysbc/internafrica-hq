@@ -115,7 +115,7 @@ export default function Home() {
               <FeatureRow title="Safe, Private Accommodation" desc="Stay in our secure volunteer house with 24/7 security and Wi-Fi." />
               <FeatureRow title="Visa & Permit Support" desc="We guide you through the Tanzanian Class C Visa process step-by-step." />
               <FeatureRow title="In-Country Team" desc="Our HQ is in Arusha. We are not a remote agency. We are here with you." />
-              <FeatureRow title="Transparent Program Fees" desc="Your program fee is $300/week, paid by you directly before travelling — Intern Africa does not cover program costs. It goes straight into your placement, accommodation, meals, and in-country support." />
+              <FeatureRow title="Transparent Program Fees" desc="Your program fee is $300/week, paid by you directly before travelling. Intern Africa does not cover program costs. It goes straight into your placement, accommodation, meals, and in-country support." />
             </div>
           </div>
           <div className="h-96 bg-gray-800 rounded-2xl overflow-hidden border-4 border-brand-accent/30 relative shadow-2xl">

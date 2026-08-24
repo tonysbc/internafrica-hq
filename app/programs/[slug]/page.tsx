@@ -124,7 +124,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
           <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 sticky top-24">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Interested?</h3>
             <p className="text-gray-500 text-sm mb-6">
-              Fill out the application form to secure your spot. No payment is required today — your program fee is paid before you travel.
+              Fill out the application form to secure your spot. No payment is required today. Your program fee is paid before you travel.
             </p>
 
             <div className="flex justify-between py-2 mb-4 border-b border-gray-100">

@@ -37,13 +37,13 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold text-brand-primary mb-6">Who We Are</h2>
         <p className="text-gray-600 leading-relaxed text-lg mb-4">
           Intern Africa is a non-governmental organization established in Tanzania and headquartered in Arusha,
-          dedicated to providing structured, high-impact internship and volunteer opportunities across Africa —
+          dedicated to providing structured, high-impact internship and volunteer opportunities across Africa,
           with placements now available in both Tanzania and Zanzibar.
         </p>
         <p className="text-gray-600 leading-relaxed text-lg">
           We were founded to bridge the persistent gap between academic education and practical, real-world
           professional experience. Graduates often leave university with strong theoretical knowledge but limited
-          exposure to actual work environments — a gap that affects employability, confidence, and career readiness.
+          exposure to actual work environments, a gap that affects employability, confidence, and career readiness.
           Intern Africa addresses this by creating pathways for students and recent graduates to transition from
           classrooms into professional settings where they can apply, test, and refine their knowledge, working
           closely with a network of reputable law firms, hospitals, and NGOs so every placement provides meaningful
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <p className="text-gray-600 leading-relaxed">
               To become Africa&apos;s leading platform for experiential learning and career development, producing
               globally competitive professionals equipped with practical skills, ethical awareness, and
-              cross-cultural competence — empowering African youth to compete and excel on a global stage.
+              cross-cultural competence, empowering African youth to compete and excel on a global stage.
             </p>
           </div>
           <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <p className="text-gray-600 leading-relaxed">
               To provide accessible, well-structured, and professionally supervised internship opportunities that
               enable students and graduates to gain practical experience, build confidence, and develop
-              career-relevant skills — through strong partnerships with host institutions and a commitment to
+              career-relevant skills, through strong partnerships with host institutions and a commitment to
               participant success and safety.
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-xl font-bold text-brand-primary mb-2">Cultural Immersion & Global Perspective</h3>
               <p className="text-gray-600 leading-relaxed">
-                Living and working in Tanzania allows interns to engage deeply with local communities, understand the country&apos;s unique history and socio-political landscape, and develop intercultural competence — essential for anyone seeking to work in international development, law, or humanitarian work.
+                Living and working in Tanzania allows interns to engage deeply with local communities, understand the country&apos;s unique history and socio-political landscape, and develop intercultural competence, essential for anyone seeking to work in international development, law, or humanitarian work.
               </p>
             </div>
           </div>
