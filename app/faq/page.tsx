@@ -19,12 +19,17 @@ export default function FAQPage() {
           answer="Simply browse our listings, select your preferred program, and follow the guided application process online via our Apply page."
         />
 
-        <FAQItem 
+        <FAQItem
           question="Are internships paid or unpaid?"
-          answer="Most internships are unpaid, but some may offer allowances or stipends depending on the organization and location."
+          answer="Our internships are unpaid placements. Instead, participants pay a program fee of $300/week, which covers your placement, accommodation, breakfast and dinner, airport pickup, orientation, in-country support, and your certificate of completion."
         />
 
-        <FAQItem 
+        <FAQItem
+          question="Who pays for the program — me or Intern Africa?"
+          answer="You pay your program fee directly, before travelling. Intern Africa does not cover or reimburse program costs — the fee funds your placement, accommodation, meals, and in-country support for the duration of your program."
+        />
+
+        <FAQItem
           question="Can I choose the country where I intern?"
           answer="Yes, you can select from various countries across Africa based on your field of interest and career goals."
         />

@@ -89,9 +89,9 @@ export default function RootLayout({
                 <li>Arusha, Tanzania</li>
                 <li>info@internafricahq.org</li>
                 <li className="flex gap-4 mt-4">
-                  <Facebook size={20} />
-                  <Instagram size={20} />
-                  <Twitter size={20} />
+                  <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+                  <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+                  <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
                 </li>
               </ul>
             </div>

@@ -5,6 +5,16 @@ import Link from "next/link";
 import { ArrowLeft, Loader2, AlertCircle } from "lucide-react";
 import { submitApplication, FormState } from "../actions";
 
+const APPLICATION_STEPS = [
+  { title: "Application Submission", desc: "Submit your academic background, preferred internship area, duration, and career interests." },
+  { title: "Review & Evaluation", desc: "Our team reviews each application to assess suitability and readiness." },
+  { title: "Placement Matching", desc: "Qualified candidates are matched with a host institution based on field, skills, and career goals." },
+  { title: "Offer & Confirmation", desc: "You receive formal confirmation of your host organization, role, duration, and fee structure." },
+  { title: "Pre-Arrival Preparation", desc: "We guide you through travel arrangements, documentation, and cultural orientation." },
+  { title: "Arrival & Orientation", desc: "You're met with airport pickup and an orientation covering program structure and safety." },
+  { title: "Program Participation & Monitoring", desc: "We stay in regular contact with you and your host institution throughout the program." },
+];
+
 export default function ApplyPage() {
   return (
     <Suspense fallback={<div>Loading form...</div>}>
@@ -28,7 +38,24 @@ function ApplyForm() {
         <Link href="/" className="inline-flex items-center text-brand-primary mb-6 font-semibold hover:underline">
            <ArrowLeft size={18} className="mr-2" /> Back Home
         </Link>
-        
+
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8">
+          <h2 className="text-2xl font-bold text-brand-primary mb-6">How the Application Process Works</h2>
+          <ol className="space-y-4">
+            {APPLICATION_STEPS.map((step, i) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="shrink-0 w-8 h-8 rounded-full bg-brand-accent text-brand-dark font-bold flex items-center justify-center text-sm">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="font-bold text-gray-800">{step.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="bg-brand-primary p-6 text-center text-white">
             <h1 className="text-3xl font-bold mb-2">Apply for Internship</h1>
@@ -107,7 +134,7 @@ function ApplyForm() {
                         <option value="medical-nursing-internship">Medical & Nursing</option>
                         <option value="legal-human-rights">Legal & Human Rights</option>
                         <option value="social-work-community">Social Work</option>
-                        <option value="volunteering-tanzania">Volunteering (Tanzania)</option>
+                        <option value="volunteering-tanzania-mainland">Volunteering (Tanzania)</option>
                         <option value="volunteering-zanzibar">Volunteering (Zanzibar)</option>
                     </select>
                     {state?.errors?.program && <p className="mt-1 text-xs text-red-500">{state.errors.program[0]}</p>}

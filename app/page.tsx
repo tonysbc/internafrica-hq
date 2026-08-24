@@ -19,8 +19,8 @@ export default function Home() {
             Recruiting for 2025/2026 Season
           </span>
           <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 tracking-tight leading-tight">
-            Internships that <br/>
-            <span className="text-brand-accent">Change Lives.</span>
+            Internship and volunteering <br/>
+            <span className="text-brand-accent">programs that change lives.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-sans">
             Gain verified medical, legal, and social work experience in Tanzania & Zanzibar. 
@@ -91,8 +91,14 @@ export default function Home() {
                  <p className="text-gray-600 mb-6 flex-grow text-sm line-clamp-3">
                    {program.description}
                  </p>
-                 <div className="flex items-center text-sm font-semibold text-brand-accent mt-auto pt-4 border-t border-gray-50">
-                   <MapPin size={16} className="mr-1" /> {program.location}
+                 <div className="flex items-center justify-between text-sm mt-auto pt-4 border-t border-gray-50">
+                   <span className="flex items-center font-semibold text-brand-accent">
+                     <MapPin size={16} className="mr-1" /> {program.location}
+                   </span>
+                   <span className="text-right">
+                     <span className="block font-bold text-brand-primary">{program.price}</span>
+                     <span className="block text-xs text-gray-400">Paid by you before travel</span>
+                   </span>
                  </div>
                </div>
              </Link>
@@ -109,6 +115,7 @@ export default function Home() {
               <FeatureRow title="Safe, Private Accommodation" desc="Stay in our secure volunteer house with 24/7 security and Wi-Fi." />
               <FeatureRow title="Visa & Permit Support" desc="We guide you through the Tanzanian Class C Visa process step-by-step." />
               <FeatureRow title="In-Country Team" desc="Our HQ is in Arusha. We are not a remote agency. We are here with you." />
+              <FeatureRow title="Transparent Program Fees" desc="Your program fee is $300/week, paid by you directly before travelling — Intern Africa does not cover program costs. It goes straight into your placement, accommodation, meals, and in-country support." />
             </div>
           </div>
           <div className="h-96 bg-gray-800 rounded-2xl overflow-hidden border-4 border-brand-accent/30 relative shadow-2xl">
