@@ -106,7 +106,7 @@ export default function RootLayout({
 
         {/* Analytics Components */}
         <WhatsAppButton />
-        <GoogleAnalytics gaId="G-XYZ123456" />
+        <GoogleAnalytics gaId="G-6HJYTLR6D7" />
         <Analytics />
         <SpeedInsights /> {/* 2. Add SpeedInsights Component */}
       </body>
