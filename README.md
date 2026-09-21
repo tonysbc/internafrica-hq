@@ -30,7 +30,7 @@ Intern Africa HQ is a premium, verified platform for medical, legal, and social 
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Email:** [Resend](https://resend.com/) & [React Email](https://react.email/)
-- **Analytics:** [Vercel Analytics](https://vercel.com/analytics) & [Speed Insights](https://vercel.com/speed-insights)
+- **Analytics:** [Vercel Analytics](https://vercel.com/analytics), [Speed Insights](https://vercel.com/speed-insights) & Google Analytics 4 (see `docs/search-and-analytics.md`)
 
 ## 📁 Project Structure
 

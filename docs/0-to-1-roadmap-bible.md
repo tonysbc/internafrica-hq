@@ -31,6 +31,8 @@
 - [x] **Form Validation:** Robust client-side and server-side validation using Zod and React 19 `useActionState`.
 - [x] **SEO Optimization:** Dynamic metadata for program pages including OpenGraph support.
 - [x] **WhatsApp Integration:** Floating "Chat with us" button site-wide for instant engagement.
+- [x] **Search & Analytics Setup (Sep 2026):** Search Console verified, sitemap and robots live, GA4 configured in its own account and linked to Search Console. Details and decisions in `docs/search-and-analytics.md`.
+- [ ] **Viewer Access:** Add view-only users in Analytics and Search Console once emails are provided.
 - [ ] **Dynamic Pricing/Booking:** Support for selecting different durations and seeing real-time pricing updates.
 
 ### Phase 3: Engagement & Community
